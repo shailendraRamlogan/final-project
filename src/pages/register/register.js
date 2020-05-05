@@ -40,27 +40,27 @@ class Register extends Component {
             Enter your email in the form below and the contents of the email
             will be generated for you
           </p>
-        </div>
-        <br />
-        <br />
-        <div className="info">
-          <label>Email Address: </label>
-          <input id="email" type="text" />
-          <button className="buttonElement2" onClick={this.generate}>
-            Get ID
-          </button>
           <br />
           <br />
-          <textarea
-            className="rerturnD"
-            id="returnBox"
-            type="text"
-            readOnly="True"
-            style={{ width: 350, height: 80 }}
-          />
+          <div className="info">
+            <label>Email Address: </label>
+            <input id="email" type="text" />
+            <button className="buttonElement2" onClick={this.generate}>
+              Get ID
+            </button>
+            <br />
+            <br />
+            <textarea
+              className="rerturnD"
+              id="returnBox"
+              type="text"
+              readOnly="True"
+              style={{ width: 350, height: 80 }}
+            />
+          </div>
+          <br />
+          <br />
         </div>
-        <br />
-        <br />
       </div>
     );
   }
