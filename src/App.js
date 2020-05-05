@@ -9,6 +9,7 @@ function App() {
     <Router>
       <div id="app">
         <Nav />
+	<Index />
         <Route path="/home" component={Index} />
         <Route path="/register" component={Register} />
       </div>
