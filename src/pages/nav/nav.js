@@ -5,13 +5,13 @@ class Nav extends Component {
     return (
       <ul className="menu">
         <li id="navButton">
-          <a href="/home">Submission</a>
+          <a href="https://master.d1pl190zpnnzwt.amplifyapp.com/home">Submission</a>
         </li>
         <li id="navButton">
           <a href="/browser">Browser</a>
         </li>
         <li id="navButton">
-          <a href="/register">Get User ID</a>
+          <a href="https://master.d1pl190zpnnzwt.amplifyapp.com/register">Get User ID</a>
         </li>
       </ul>
     );
