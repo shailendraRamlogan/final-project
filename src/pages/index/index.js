@@ -11,8 +11,10 @@ class Index extends Component {
   state = {
     filenames: [],
     downloadURLs: [],
+    language: "",
     isUploading: false,
-    uploadProgress: 0
+    uploadProgress: 0,
+    response: ""
   };
 
   handleUploadStart = () => {
@@ -27,7 +29,26 @@ class Index extends Component {
       uploadProgress: progress
     });
   };
-
+  submitRequest = e => {
+    e.preventDefault();
+    const apiPath = 'http://18.218.101.171/cgi-bin/callPearl.php';
+    var e =document.getElementById("langDrop");
+    messagedata = {
+      language = e.options[e.selectedIndex].value
+    };
+    axios({
+      method: 'post',
+      url: `${apiPath}`,
+      headers: { 'content-type': 'application/json' },
+      data: messagedata
+    })
+    .then(result => {
+      this.setState({
+        response: result.data.response
+      })
+    })
+    console.log(this.state);
+  }
   handleUploadError = error => {
     this.setState({
       isUploading: false
@@ -112,7 +133,7 @@ class Index extends Component {
                   to validate
                 </span>
               </ReactTooltip>
-              <select className="langDrop" name="Languages">
+              <select id="langDrop" className="langDrop" name="Languages">
                 <option value="java">Java</option>
                 <option value="c++">C++</option>
                 <option value="c">C</option>
@@ -306,7 +327,7 @@ class Index extends Component {
               <button
                 className="buttonElement"
                 name="Send request"
-                onClick={this.submitRequest}
+                onClick={this.submitRequest(e)}
               >
                 Send Request
               </button>
